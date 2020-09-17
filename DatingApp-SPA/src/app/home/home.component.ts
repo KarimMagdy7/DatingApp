@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 registerMode = false;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -15,7 +16,11 @@ registerMode = false;
 
   // tslint:disable-next-line: typedef
   registerToggle() {
-    this.registerMode = !this.registerMode;
+    this.registerMode = true;
   }
 
+
+  cancelRegisterMode(registerMode: boolean): void{
+    this.registerMode = registerMode;
+  }
 }
