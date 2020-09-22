@@ -32,6 +32,7 @@ register(model: any){
   return this.http.post(this.baseUrl + 'register', model);
 }
 
+// tslint:disable-next-line: typedef
 loggedIn() {
   const token = localStorage.getItem('token');
   return !this.jwtHelper.isTokenExpired(token);
